@@ -214,14 +214,46 @@ export default {
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss">
 body {
-  background: #d9d9d9;
   display: flex;
   justify-content: center;
   align-items: center;
+
   min-height: 100vh;
+
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.35)
+    ),
+
+      url("../../public/imgs/news.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden; 
+}
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.08);
+
+  filter: blur(120px);
+
+  z-index: -1;
 }
 
 h3,
@@ -271,7 +303,12 @@ p,
   -webkit-overflow-scrolling: touch;
   /* 모바일 부드러운 스크롤 */
 
-  background: #FDFCF8;
+   background:
+    linear-gradient(
+      180deg,
+      #F8F6F1 0%,
+      #ECE7DA 100%
+    );
 
   border: 14px solid #111;
   border-radius: 55px;
@@ -327,11 +364,11 @@ p,
   opacity: 0.8;
 }
 
-h1 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  color: #111;
+h1,
+
+h3 {
+  font-family: 'Playfair Display', serif;
+  color: #f77824;
 }
 
 // 키워드 필터
@@ -359,7 +396,7 @@ h1 {
 
 /* active 상태 */
 .keywordBtn.active {
-  background: #CEB564;
+  background: #cc9352;
   color: #fff;
   border: 1px solid #CEB564;
 }
@@ -439,7 +476,7 @@ h1 {
   width: 160px;
   height: 230px;
 
-  border-radius: 18px;
+  border-radius: 10px;
   overflow: hidden;
 
   position: relative;
@@ -568,10 +605,78 @@ h1 {
   z-index: 30;
 }
 
-/* 탭 */
+/* Glass iOS TabBar */
+.tabBar {
+  position: absolute;
+
+  left: 50%;
+  bottom: 22px;
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 34px);
+  height: 74px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border-radius: 30px;
+
+  /* 핵심 */
+  background: rgba(255,255,255,0.14);
+
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+
+  border: 1px solid rgba(255,255,255,0.22);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.12),
+    inset 0 1px 1px rgba(255,255,255,0.35),
+    inset 0 -1px 1px rgba(255,255,255,0.08);
+
+  z-index: 50;
+
+  overflow: hidden;
+}
+
+/* 유리 반사광 */
+.tabBar::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 50%;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.28),
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+/* 탭 버튼 */
 .tab {
+  position: relative;
+
   border: 0;
   background: transparent;
+
+  width: 56px;
+  height: 56px;
+
+  border-radius: 18px;
 
   display: flex;
   flex-direction: column;
@@ -582,22 +687,24 @@ h1 {
 
   cursor: pointer;
 
-  color: #888;
+  transition: .28s cubic-bezier(.4,0,.2,1);
 
-  transition: .25s;
+  color: black;
 
   img {
     width: 22px;
     height: 22px;
 
-    opacity: .7;
+    opacity: .75;
 
-    transition: .25s;
+    transition: .28s;
   }
 
   span {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 500;
+
+    letter-spacing: -0.2px;
   }
 
   &:hover {
@@ -607,30 +714,42 @@ h1 {
 
 /* active */
 .tab.active {
-  color: #111;
+  background: rgba(255,255,255,0.12);
+
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.18),
+    0 4px 10px rgba(0,0,0,0.08);
+
+  color: #c28910;
 
   img {
     opacity: 1;
   }
 }
 
-/* 가운데 버튼 */
+/* 중앙 플로팅 버튼 */
 .centerBtn {
-  width: 56px;
-  height: 56px;
+  width: 62px;
+  height: 62px;
 
   border-radius: 50%;
 
-  background: linear-gradient(
-    135deg,
-    #CEB564,
-    #E8D28B
-  );
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.9),
+      rgba(255,255,255,0.15)
+    );
 
-  margin-top: -35px;
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,0.3);
+
+  margin-top: -34px;
 
   box-shadow:
-    0 10px 25px rgba(206,181,100,0.35);
+    0 10px 30px rgba(0,0,0,0.16),
+    inset 0 1px 2px rgba(255,255,255,0.5);
 
   img {
     width: 24px;
@@ -638,6 +757,36 @@ h1 {
 
     opacity: 1;
   }
+
+  &:hover {
+    transform: translateY(-4px) scale(1.04);
+  }
 }
+
+.home::selection {
+  background: transparent;
+}
+
+.home::after {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  background: rgba(255,255,255,0.22);
+
+  filter: blur(80px);
+
+  bottom: -80px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 0;
+}
+
+
 
 </style>
