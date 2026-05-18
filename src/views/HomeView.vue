@@ -121,7 +121,7 @@ export default {
     },
 
     newList() {
-      fetch(`http://localhost:4000/news?keyword=${this.keyword}`)
+      fetch(`https://react-todolist-wine.vercel.app/news?keyword=${this.keyword}`)
         .then(res => res.json())
         .then(res => {
 
