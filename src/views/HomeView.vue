@@ -37,6 +37,10 @@
           연예
         </button>
 
+        <button @click="keyWordChange('스포츠')" :class="{ active: keyword === '스포츠' }" class="keywordBtn">
+          스포츠
+        </button>
+
       </div>
 
       <!-- 카드 뉴스 -->
@@ -69,29 +73,29 @@
     </div>
 
     <!-- 하단 탭바 -->
-<div class="tabBar">
+    <div class="tabBar">
 
-  <button class="tab active">
-    <img src="/imgs/home.svg" />
-    <span>홈</span>
-  </button>
+      <button class="tab active" @click="$router.push('/home')">
+        <img src="/imgs/home.svg" />
+        <span>홈</span>
+      </button>
 
-  <button class="tab">
-    <img src="/imgs/trend.svg" />
-    <span>트렌드</span>
-  </button>
+      <button class="tab" @click="$router.push('/trend')" :class="{ active: $route.path === '/trend' }">
+        <img src="/imgs/trend.svg" />
+        <span>트렌드</span>
+      </button>
 
-  <button class="tab">
-    <img src="/imgs/scarp.svg" />
-    <span>저장</span>
-  </button>
+      <button class="tab">
+        <img src="/imgs/scarp.svg" />
+        <span>스크랩</span>
+      </button>
 
-  <button class="tab">
-    <img src="/imgs/profile.svg" />
-    <span>프로필</span>
-  </button>
+      <button class="tab">
+        <img src="/imgs/profile.svg" />
+        <span>프로필</span>
+      </button>
 
-</div>
+    </div>
 
   </div>
   <HelloWorld />
@@ -175,7 +179,7 @@ export default {
       const seen = new Set();
 
       return this.data.filter(item => {
-        // 🔥 title + link 같이 비교 (중복 제거 강화)
+        // title + link 같이 비교 (중복 제거 강화)
         const key = item.title + item.link;
 
         if (seen.has(key)) return false;
@@ -225,18 +229,16 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 
   background:
-    linear-gradient(
-      rgba(0,0,0,0.35),
-      rgba(0,0,0,0.35)
-    ),
+    linear-gradient(rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)),
 
-      url("../../public/imgs/news.jpg");
+    url("../../public/imgs/news.jpg");
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 body::after {
@@ -249,7 +251,7 @@ body::after {
 
   border-radius: 50%;
 
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
 
   filter: blur(120px);
 
@@ -303,12 +305,10 @@ p,
   -webkit-overflow-scrolling: touch;
   /* 모바일 부드러운 스크롤 */
 
-   background:
-    linear-gradient(
-      180deg,
+  background:
+    linear-gradient(180deg,
       #F8F6F1 0%,
-      #ECE7DA 100%
-    );
+      #ECE7DA 100%);
 
   border: 14px solid #111;
   border-radius: 55px;
@@ -380,23 +380,17 @@ h3 {
 
 .keywordBtn {
   padding: 6px 14px;
-
   border-radius: 20px;
-
-  border: 1px solid #CEB564;
-
-  background: #fff;
-
+  border: 1px solid #dabf66;
+  //background: #fff;
   font-size: 12px;
-
   cursor: pointer;
-
-  transition: .3s;
+  transition: 0.3s;
 }
 
 /* active 상태 */
 .keywordBtn.active {
-  background: #cc9352;
+  background: #d87e54;
   color: #fff;
   border: 1px solid #CEB564;
 }
@@ -436,7 +430,7 @@ h3 {
 }
 
 .keywordBtn {
-  border: 1px solid #ccc;
+  border: 1px solid #d3c081;
   background: #fff;
 
   border-radius: 20px;
@@ -544,7 +538,7 @@ h3 {
     margin-top: 15px;
   }
 
-   h3 {
+  h3 {
     font-size: 28px;
     line-height: 1.2;
 
@@ -581,7 +575,7 @@ h3 {
   width: calc(100% - 32px);
   height: 72px;
 
-  background: rgba(255,255,255,0.78);
+  background: rgba(255, 255, 255, 0.78);
 
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -597,10 +591,10 @@ h3 {
   box-sizing: border-box;
 
   box-shadow:
-    0 8px 30px rgba(0,0,0,0.08),
-    inset 0 1px 0 rgba(255,255,255,0.9);
+    0 8px 30px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 
-  border: 1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 
   z-index: 30;
 }
@@ -628,17 +622,17 @@ h3 {
   border-radius: 30px;
 
   /* 핵심 */
-  background: rgba(255,255,255,0.14);
+  background: rgba(255, 255, 255, 0.14);
 
   backdrop-filter: blur(30px) saturate(180%);
   -webkit-backdrop-filter: blur(30px) saturate(180%);
 
-  border: 1px solid rgba(255,255,255,0.22);
+  border: 1px solid rgba(255, 255, 255, 0.22);
 
   box-shadow:
-    0 10px 40px rgba(0,0,0,0.12),
-    inset 0 1px 1px rgba(255,255,255,0.35),
-    inset 0 -1px 1px rgba(255,255,255,0.08);
+    0 10px 40px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.08);
 
   z-index: 50;
 
@@ -657,11 +651,9 @@ h3 {
   width: 100%;
   height: 50%;
 
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.28),
-    transparent
-  );
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.28),
+      transparent);
 
   pointer-events: none;
 }
@@ -687,7 +679,7 @@ h3 {
 
   cursor: pointer;
 
-  transition: .28s cubic-bezier(.4,0,.2,1);
+  transition: .28s cubic-bezier(.4, 0, .2, 1);
 
   color: black;
 
@@ -714,16 +706,16 @@ h3 {
 
 /* active */
 .tab.active {
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
 
   box-shadow:
-    inset 0 1px 1px rgba(255,255,255,0.18),
-    0 4px 10px rgba(0,0,0,0.08);
+    inset 0 1px 1px rgba(255, 255, 255, 0.18),
+    0 4px 10px rgba(0, 0, 0, 0.08);
 
   color: #c28910;
 
   img {
-    opacity: 1;
+    filter: brightness(1.2);
   }
 }
 
@@ -735,21 +727,19 @@ h3 {
   border-radius: 50%;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,0.9),
-      rgba(255,255,255,0.15)
-    );
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.15));
 
   backdrop-filter: blur(20px);
 
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 
   margin-top: -34px;
 
   box-shadow:
-    0 10px 30px rgba(0,0,0,0.16),
-    inset 0 1px 2px rgba(255,255,255,0.5);
+    0 10px 30px rgba(0, 0, 0, 0.16),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
 
   img {
     width: 24px;
@@ -775,7 +765,7 @@ h3 {
   width: 240px;
   height: 240px;
 
-  background: rgba(255,255,255,0.22);
+  background: rgba(255, 255, 255, 0.22);
 
   filter: blur(80px);
 
@@ -786,7 +776,4 @@ h3 {
 
   z-index: 0;
 }
-
-
-
 </style>
