@@ -102,9 +102,4 @@ HOT 뉴스 강조
 개인 프로젝트
 
 
-setInterval(() => {
-  slider.scrollBy({
-    left: 180,
-    behavior: 'smooth'
-  });
-}, 2500);
+
