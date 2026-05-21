@@ -22,15 +22,15 @@ Today’s Insight는 실시간 뉴스 데이터를 기반으로
 ✨ 주요 기능
 
 📰 실시간 뉴스 조회 <br/>
-🔍 뉴스 검색 기능
-📈 조회수 기반 트렌드 뉴스 랭킹
-🔥 HOT 뉴스 카드 UI
-🏷 카테고리별 뉴스 필터링
-📱 모바일 뉴스 앱 스타일 인터페이스
-🎞 자동 슬라이드 뉴스 카드
+🔍 뉴스 검색 기능 <br/>
+📈 조회수 기반 트렌드 뉴스 랭킹 <br/>
+🔥 HOT 뉴스 카드 UI <br/>
+🏷 카테고리별 뉴스 필터링 <br/>
+📱 모바일 뉴스 앱 스타일 인터페이스 <br/>
+🎞 자동 슬라이드 뉴스 카드 <br/>
 📊 실시간 조회수 및 상승률 업데이트
 
-🛠 기술 스택
+🛠 기술 스택 <br/>
 💻 Frontend
 <table> <thead> <tr> <th>사용기술</th> <th>설명</th> <th>Badge</th> </tr> </thead> <tbody> <tr> <td>Vue.js</td> <td>컴포넌트 기반 UI 개발</td> <td> <img src="https://img.shields.io/badge/Vue.js-42B883?style=flat-square&logo=vuedotjs&logoColor=white"> </td> </tr>
 
