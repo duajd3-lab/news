@@ -1,13 +1,12 @@
+# News
+
 📰 Today’s Insight
 
 실시간 뉴스 및 트렌드 분석 모바일 웹 애플리케이션
 카테고리별 뉴스 탐색과 트렌드 기반 랭킹 시스템을 제공합니다.
 
 🌐 배포
-
-Vercel을 통해 배포되어 있습니다.
-
-👉 배포 링크 입력
+👉(https://news-silk-three.vercel.app/)
 
 ---
 
