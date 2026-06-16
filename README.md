@@ -5,7 +5,7 @@
 실시간 뉴스 및 트렌드 분석 모바일 웹 애플리케이션
 카테고리별 뉴스 탐색과 트렌드 기반 랭킹 시스템을 제공합니다.
 
-
+<br/>
 🌐 배포
 👉(https://news-silk-three.vercel.app/)
 
@@ -15,7 +15,7 @@
 
 2026.05
 개인 프로젝트
-
+<br/>
 
 📌 프로젝트 소개
 
@@ -25,7 +25,7 @@ Today’s Insight는 실시간 뉴스 데이터를 기반으로
 모바일 환경에 최적화된 인터페이스와
 실시간 트렌드 랭킹 시스템을 통해 뉴스 소비 경험을 개선했습니다.
 
-
+<br/>
 ✨ 주요 기능
 
 📰 실시간 뉴스 조회 <br/>
@@ -37,7 +37,7 @@ Today’s Insight는 실시간 뉴스 데이터를 기반으로
 🎞 자동 슬라이드 뉴스 카드 <br/>
 📊 실시간 조회수 및 상승률 업데이트
 
-
+<br/>
 🛠 기술 스택 <br/>
 💻 Frontend
 <table> <thead> <tr> <th>사용기술</th> <th>설명</th> <th>Badge</th> </tr> </thead> <tbody> <tr> <td>Vue.js</td> <td>컴포넌트 기반 UI 개발</td> <td> <img src="https://img.shields.io/badge/Vue.js-42B883?style=flat-square&logo=vuedotjs&logoColor=white"> </td> </tr>
@@ -88,7 +88,7 @@ Today’s Insight는 실시간 뉴스 데이터를 기반으로
   </td>
 </tr>
 </tbody> </table>
-
+<br/>
 
 📱 주요 화면 <br/>
 
@@ -98,7 +98,7 @@ Today’s Insight는 실시간 뉴스 데이터를 기반으로
 - 주요 뉴스 추천 <br/>
 - 카테고리별 뉴스 검색 <br/>
 
-
+<br/>
 📈 Trending <br/>
 
 - 조회수 기반 뉴스 랭킹 <br/>
@@ -106,7 +106,7 @@ Today’s Insight는 실시간 뉴스 데이터를 기반으로
 - HOT 뉴스 강조 <br/>
 - 실시간 트렌드 업데이트 <br/>
 
-
+<br/>
 📂 프로젝트 구조
 
 
